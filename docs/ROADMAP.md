@@ -5,7 +5,7 @@ Status: project inception. No implementation milestones have been completed.
 | Stage | Deliverable | Exit criteria |
 |---|---|---|
 | 0 — Foundation | Naming, axioms, governance and repository scaffold | Baseline documents integrated; open decisions recorded |
-| 1 — Language kernel design | Formal lexical model, grammar notation, minimal semantics and speech encoding | Accepted decisions; unambiguous grammar cases and cross-profile examples |
+| 1 — Language kernel design | Formal lexical model, grammar notation, minimal semantics, speech encoding and extension seams | Accepted decisions; unambiguous grammar cases and cross-profile examples |
 | 2 — Proof of concept | Tiny lexer/parser and evaluator | Variables, literals, simple arithmetic, output and control flow as agreed; positive/negative executable tests |
 | 3 — Multilingual parity | Initial English, Mandarin and Russian profiles | Shared canonical tokens/AST, round-trip checks, collisions and Unicode cases |
 | 4 — General-purpose core | Functions, collections, modules, types, errors and object/functional features as approved | Versioned specification and shared conformance suite |
@@ -17,4 +17,4 @@ Stages are dependency guidance, not fixed dates. Prototype critical cross-profil
 
 ## Next work
 
-Agree on the smallest viable lexical and grammatical kernel: token classes, statement/phrase boundaries, literals and identifiers, language-profile structure, and reversible speech. Compare alternative designs before selecting specific words. Decide the first implementation host and target using a bounded prototype. See [decision register](decisions/README.md) and the [pending design discussion backlog](decisions/PENDING.md), organized in batches of five.
+Agree on the smallest viable lexical and grammatical kernel: token classes, statement/phrase boundaries, literals and identifiers, language-profile structure, and reversible speech. Compare alternative designs before selecting specific words. Design the protected kernel and extension contracts alongside the early compiler, not as a late retrofit; verify a representative first-party module and third-party extension in the prototype when implemented. Decide the first implementation host and target using a bounded prototype. See [decision register](decisions/README.md) and the [pending design discussion backlog](decisions/PENDING.md), organized in batches of five.
