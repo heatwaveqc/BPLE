@@ -44,3 +44,7 @@ Start with known paths and targeted file reads; search narrowly by component or 
 ## Durable handoff and reporting
 
 Before ending a substantive task, push recoverable work when possible and put status in the PR or issue (not only in chat). Record goal, base/head SHA, branch/PR, paths changed, decision status, tests actually run/results, blockers, remaining work and exact next actions. Link superseded work and preserve provenance. Verify any claimed merge or workflow result. When blocked, complete safe independent steps first, explain the exact limitation and distinguish attempted from verified work. Keep [roadmap](docs/ROADMAP.md) and relevant decision/test records current without rewriting history.
+
+## Design discussion cadence
+
+Use [the pending design backlog](docs/decisions/PENDING.md) and linked GitHub issues for unresolved design topics. Discuss five related pending items at a time unless the owner directs otherwise; preserve explicit decisions with ADRs, spec updates, and conformance plans. Mark issue checklist items disposed only after linking the decision record/PR; keep unresolved or deferred items tracked. Batch numbering and backlog topic IDs are not ADR numbering or language specification. Never treat a pending topic as approved merely because it has an issue.
