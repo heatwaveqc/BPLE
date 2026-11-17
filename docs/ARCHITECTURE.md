@@ -26,10 +26,15 @@ Candidate implementation: .NET hosting, possible managed JIT and Native AOT stra
 
 Proposed component names (not finalized): Sermo (compiler/runtime), Lexis (lexicon and translation tooling), Canon (standard library), Scriptorium (package manager). Directory layout currently uses neutral role names so those names can change.
 
+## Extensibility (required direction; implementation open)
+
+A protected kernel supplies canonical concepts, invariant rules, module resolution and extension contracts. Standard and third-party compiler modules should consume common versioned interfaces where practicable. Program-declared module requirements and semantic options must be resolved before interpreting extension-dependent syntax. Lexical profiles render the resulting compatible concept inventory and remain data rather than executable language modules. Preserve shared validation, explicit composition and cross-backend semantics. Potential extension seams include syntax productions, types/operators, analyses, lowering, diagnostics and IDE/tooling. See [extension requirements](../spec/EXTENSIBILITY.md); exact module API, trust boundary, header grammar, dependency and feature resolution, and implementation details are open.
+
 ## Ownership boundaries
 
 - spec/: normative shared contracts.
-- lexicons/: profile data and future schema; not runtime language plugins.
+- lexicons/: profile data and future schema; not executable language plugins.
+- modules/: proposed future standard/third-party extension packages and contracts; directory structure and API pending.
 - src/: shared frontend, semantics, IR, execution backends and tooling.
 - tests/: language-independent conformance cases and implementation checks.
 - examples/: illustrative or verified programs, explicitly labeled.

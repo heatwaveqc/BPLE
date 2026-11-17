@@ -13,6 +13,7 @@ Record material design decisions in numbered Markdown files such as 0001-lexical
 | 0006 | [Symbolic and verbal literals](0006-literals.md) | Accepted |
 | 0007 | [Lossless spoken and written representation](0007-speech-text.md) | Accepted |
 | 0008 | [BPLE source-file extension](0008-source-extension.md) | Accepted |
+| 0009 | [Axiom VI — Deliberate extensibility](0009-extensibility-axiom.md) | Accepted |
 
 ## Pending design decisions
 
@@ -20,6 +21,6 @@ Use the [discussion backlog](PENDING.md) to find the next batch of five. GitHub 
 
 ## Open questions (not decisions)
 
-Formal grammar notation and statement boundaries; exact token IDs and profile schema; delimiter configuration, canonical source serialization and profile resolution details (L02/G05/P01/P04); Unicode normalization/folding, escapes, and exact spoken representation (including arbitrary literal/identifier spelling); type and effect systems; arithmetic and evaluation order; implementation host and backend strategy; standard library and localization; CLI names and packaging formats; compatibility/versioning; software license.
+Formal grammar notation and statement boundaries; exact token IDs and profile schema; delimiter configuration, canonical source serialization and profile resolution details (L02/G05/P01/P04); Unicode normalization/folding, escapes, and exact spoken representation (including arbitrary literal/identifier spelling); type and effect systems; arithmetic and evaluation order; implementation host and backend strategy; standard library and localization; CLI names and packaging formats; compatibility/versioning; extension boundaries, module headers, APIs, dependency resolution, feature toggles and trust model; software license.
 
 Create a proposal when work begins on a question; do not assign decisions merely because an agent uses a provisional example.

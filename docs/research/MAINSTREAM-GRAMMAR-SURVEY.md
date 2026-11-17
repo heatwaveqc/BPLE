@@ -4,7 +4,7 @@ Status: research and recommendations, 2026-11-17. Not normative; no syntax, keyw
 
 ## Evaluation rule
 
-Proposed design heuristic, subordinate to the five [axioms](../../spec/AXIOMS.md): prefer familiarity unless departure provides a demonstrable benefit. Distinguish computational concepts, grammatical structure, and surface notation. Retain the transferable mental model whenever the notation can be improved independently. Evaluate departures against determinism, linguistic neutrality, speakability, readability, expressiveness, safety, performance/tooling, and migration cost. A familiar construct that violates an axiom must be adapted, not exempted.
+Proposed design heuristic, subordinate to the six [axioms](../../spec/AXIOMS.md): prefer familiarity unless departure provides a demonstrable benefit. Distinguish computational concepts, grammatical structure, and surface notation. Retain the transferable mental model whenever the notation can be improved independently. Evaluate departures against determinism, linguistic neutrality, speakability, readability, expressiveness, safety, performance/tooling, and migration cost. A familiar construct that violates an axiom must be adapted, not exempted. Under Axiom VI, evaluate modular seams and meaningful configuration for all candidates; see [extension requirements](../../spec/EXTENSIBILITY.md).
 
 This is a representative survey, not a claim that every listed construct occurs in every language. The common structured imperative baseline coexists with expression-oriented, functional, event-driven and declarative programming. Orthographic choices do not necessarily define the computational model.
 
@@ -42,7 +42,7 @@ This is a representative survey, not a claim that every listed construct occurs 
 | Closures and higher-order functions | Retain candidates | Capture by value/reference, lifetime and mutation rules. |
 | Modules and imports | Retain | Stable identity, versioning, dependency resolution and localized presentation of APIs. |
 | Asynchrony and concurrency | Retain candidates | Explicit control/effects; structured concurrency and memory model; nondeterminism must be specified. |
-| Metaprogramming | Reevaluate | Prefer structured AST/IR rather than text macros; syntax extensibility may violate shared grammar. |
+| Metaprogramming | Reevaluate | Prefer structured AST/IR rather than text macros; syntax extensions must compose deterministically through the common extension contract. |
 | Memory and resource management | Reevaluate | Garbage collection vs ownership and deterministic resource cleanup; no host decision yet. |
 
 ## Priority questions and proposed alternatives
@@ -74,7 +74,7 @@ Identifiers, comments, arbitrary literal payloads, numbers, punctuation, groupin
 5. Define basic function signatures, call and argument binding, return, control flow and iteration.
 6. Select minimal runtime semantics and independently compare candidate host technologies; prototype English plus a structurally different profile and canonical speech round trips from the outset.
 
-Each decision requires owner approval for normative adoption, a five-axiom review, and positive/negative conformance cases. Use equivalent cross-profile fixtures; distinguish syntax ambiguity, semantic uncertainty, and recognition errors. This research does not authorize implementation or finalize concrete grammar.
+Each decision requires owner approval for normative adoption, a six-axiom review, and positive/negative conformance cases. Use equivalent cross-profile fixtures; distinguish syntax ambiguity, semantic uncertainty, and recognition errors. This research does not authorize implementation or finalize concrete grammar.
 
 ## Reference baseline
 

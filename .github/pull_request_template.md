@@ -2,7 +2,8 @@
 
 ## Decision / standard impact
 - Status: implementation of accepted contract / proposal / no language-design change
-- Decision and axiom impact:
+- Decision and six-axiom impact:
+- Extension seams, configuration, and justification for kernel-only behavior (if applicable):
 
 ## Dependencies and ownership
 

@@ -13,7 +13,7 @@
 
 ## Axiom compatibility
 
-Address all five explicitly, including linguistic and execution-mode parity.
+Address all six explicitly, including linguistic and execution-mode parity. For Axiom VI, identify modular seams, configuration toggles and programmatic extension points; justify anything that must remain kernel-only, and distinguish semantic settings from presentation/optimization preferences.
 
 ## Specification changes and conformance cases
 
