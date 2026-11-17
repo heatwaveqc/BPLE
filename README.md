@@ -21,6 +21,7 @@ Read the [constitution](spec/AXIOMS.md) for the implications of each axiom.
 - [Project vision](docs/VISION.md)
 - [Architecture proposal](docs/ARCHITECTURE.md)
 - [Roadmap](docs/ROADMAP.md)
+- [Mainstream grammar survey](docs/research/MAINSTREAM-GRAMMAR-SURVEY.md) (research and proposals)
 - [Design decision register](docs/decisions/README.md)
 - [The Grammar Standard](spec/README.md)
 - [Lexicon profiles](lexicons/README.md)
