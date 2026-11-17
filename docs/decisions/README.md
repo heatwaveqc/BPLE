@@ -6,7 +6,6 @@ Record material design decisions in numbered Markdown files such as 0001-lexical
 |---|---|---|
 | 0000 | [Project identity and constitutional axioms](0000-foundation.md) | Accepted |
 | 0001 | [Named grammatical enclosures and generated identifiers](0001-named-enclosures.md) | Accepted (design requirements) |
-
 | 0002 | [Dedicated excessive-nesting diagnostic](0002-excessive-nesting.md) | Accepted (diagnostic requirement) |
 
 ## Pending design decisions
