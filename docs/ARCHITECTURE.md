@@ -2,11 +2,11 @@
 
 This is a proposed decomposition, not an implementation commitment.
 
-    source text / spoken-form tokens
-                   |
-       selected lexical profile
-                   |
-          canonical token stream
+    canonical source (default)     localized text / speech
+              |                              |
+      canonical decoder             selected lexical profile
+              |                              |
+              +------ canonical token stream +
                    |
           universal grammar parser
                    |
@@ -20,7 +20,7 @@ This is a proposed decomposition, not an implementation commitment.
 
 A text frontend and eventual speech adapter share a deterministic normalization contract. The speech adapter may use recognition technology, but its output is a constrained representation, not guessed code. A profile controls spellings, aliases and segmentation within a shared lexical model; profile-specific executable parsing rules are not assumed. Preserve source maps through stages so errors can refer to original locations and be localized.
 
-[Lexical requirements](../spec/LEXICAL-FOUNDATIONS.md) are accepted; exact canonical token/AST/IR formats, grammar notation, Unicode normalization, delimiter handling, precedence, number and string syntax, identifier spelling, scoped imports and evaluation rules remain open. IDE-localized rendering/input over canonical concepts independent of on-disk source profile and optional canonical serialization are pending proposals (see [decision 0004](decisions/0004-lexical-profiles.md)). Do not conflate canonical syntax with semantic equivalence (binding and literal preservation matter).
+[Lexical requirements](../spec/LEXICAL-FOUNDATIONS.md) are accepted; exact canonical token/AST/IR formats, grammar notation, Unicode normalization, delimiter handling, precedence, number and string syntax, identifier spelling, scoped imports and evaluation rules remain open. Canonical token-based source is the configurable new-file default; localized plain text is an opt-in first-class format. A shared frontend recognizes both, and the IDE's localized display/input layer provides live feedback and preserves existing storage format and source profile on save. Exact canonical serialization and recognition protocol remain open (see [decision 0004](decisions/0004-lexical-profiles.md)). Do not conflate canonical syntax with semantic equivalence (binding and literal preservation matter).
 
 Candidate implementation: .NET hosting, possible managed JIT and Native AOT strategy, with an embedded interpreter for dynamic scripts where native runtime code generation is unavailable. Evaluate alternatives against interoperability, portability, semantic parity, executable packaging and tooling before adoption. Verify actual backend capabilities with versioned primary sources and a minimal experiment; do not promise a specific output format before the prototype proves it.
 
