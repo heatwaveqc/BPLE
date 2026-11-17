@@ -23,7 +23,7 @@ Two first-class source representations are supported by the compiler and tooling
 
 On opening or reading a file, the frontend recognizes its existing representation. The IDE edits and renders through the canonical token model, using the programmer's selected display/input profile regardless of the stored format, and supports live lexical/syntactic feedback. Changing the IDE language or default format does not silently convert, rename or retranslate an existing file. Save in the original representation, and for localized text retain the original source profile unless the user explicitly requests conversion; preserve identifiers, literals, comments and relevant source information. The IDE's configurable default applies to new files. Format switching is an explicit action.
 
-Format recognition must be deterministic. Prefer an unambiguous format marker/version for canonical source and an explicit source-profile declaration or equivalent persisted metadata for plain text. Automatic language detection may suggest a profile, but must not silently choose between ambiguous interpretations. Exact file markers, extensions, source-profile resolution precedence, versioning, handling of incomplete edits and cross-profile reserved-word collisions remain design work. A malformed canonical file must not silently fall back to localized text. See [decision 0004](../docs/decisions/0004-lexical-profiles.md).
+Format recognition must be deterministic. Prefer an unambiguous format marker/version for canonical source and an explicit source-profile declaration or equivalent persisted metadata for plain text. Automatic language detection may suggest a profile, but must not silently choose between ambiguous interpretations. Both source representations use the `.bple` extension (recognize `.BPLE` and other case variants); the extension alone does not identify the stored representation or profile. See [decision 0008](../docs/decisions/0008-source-extension.md). Exact file markers, source-profile resolution precedence, versioning, handling of incomplete edits and cross-profile reserved-word collisions remain design work. A malformed canonical file must not silently fall back to localized text. See [decision 0004](../docs/decisions/0004-lexical-profiles.md).
 
 ## Identifiers
 
@@ -80,6 +80,7 @@ Idiomatic speech can be convenient but must not replace the canonical explicit e
 | Arbitrary string characters, embedded quote terminators, Unicode and whitespace | Exact reversible representation |
 | Spoken/written equivalents and explicitly spelled homophones | Round trip to equal computational information |
 | Localized viewing of user names/literals | No implicit translation or semantic change |
+| Both source representations with .bple/.BPLE extension | Recognize the content format independently; do not rename existing files |
 | Canonical and localized source with equivalent tokens | Same parser input and semantics |
 | Open/edit/save existing source in either format | Retain format and stored profile; preserve data and comments |
 | Change IDE display/input profile or new-file default | Existing stored representation unchanged; explicit conversion only |
