@@ -14,6 +14,7 @@ Record material design decisions in numbered Markdown files such as 0001-lexical
 | 0007 | [Lossless spoken and written representation](0007-speech-text.md) | Accepted |
 | 0008 | [BPLE source-file extension](0008-source-extension.md) | Accepted |
 | 0009 | [Axiom VI — Deliberate extensibility](0009-extensibility-axiom.md) | Accepted |
+| 0010 | [Complete standard installation](0010-standard-installation.md) | Accepted |
 
 ## Pending design decisions
 

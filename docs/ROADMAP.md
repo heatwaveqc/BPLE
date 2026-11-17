@@ -17,4 +17,6 @@ Stages are dependency guidance, not fixed dates. Prototype critical cross-profil
 
 ## Next work
 
+Follow the revised extension-first [discussion backlog](decisions/PENDING.md): five primary batches (25 topics) before serious implementation, with later advanced-module/ecosystem details deferred until shared contracts and prototype evidence exist. Bring forward blocking feasibility and licensing questions. The standard distribution must ultimately be a complete general-purpose environment with ordinary features enabled by default ([0010](decisions/0010-standard-installation.md)); deferring detailed designs is not dropping those features.
+
 Agree on the smallest viable lexical and grammatical kernel: token classes, statement/phrase boundaries, literals and identifiers, language-profile structure, and reversible speech. Compare alternative designs before selecting specific words. Design the protected kernel and extension contracts alongside the early compiler, not as a late retrofit; verify a representative first-party module and third-party extension in the prototype when implemented. Decide the first implementation host and target using a bounded prototype. See [decision register](decisions/README.md) and the [pending design discussion backlog](decisions/PENDING.md), organized in batches of five.
