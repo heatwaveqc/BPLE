@@ -1,6 +1,6 @@
 # Validation and conformance
 
-Keep specification-level fixtures independent of backend or profile when possible. Future suites should cover lexicon completeness and collisions, Unicode and segmentation, invalid/ambiguous grammar, precedence and scoping, literal/identifier round trips, localized/symbolic/spoken representation equivalence, semantics and diagnostics, and interpreter/JIT/AOT parity.
+Keep specification-level fixtures independent of backend or profile when possible. Future suites should cover lexicon completeness and collisions, Unicode and segmentation, invalid/ambiguous grammar, precedence and scoping, literal/identifier round trips, localized/symbolic/spoken representation equivalence, semantics and diagnostics, and interpreter/JIT/AOT parity. Extension conformance must additionally exercise documented plugin interfaces, missing and incompatible modules, conflicts, explicit feature configurations, profile/spoken equivalence, protected kernel behavior and supported execution-mode parity. Record the effective extension and semantic-option versions with test evidence.
 
 ## Evidence levels
 

@@ -1,6 +1,6 @@
 # The Grammar — Constitution
 
-Status: foundational; approved axioms as established at project inception, 2026-11-17. The explanations below are design interpretations and test obligations, not a finalized syntax specification.
+Status: foundational; approved axioms established and amended at project inception, 2026-11-17. The explanations below are design interpretations and test obligations, not a finalized syntax specification.
 
 ## Axiom I — Vocabulary is interchangeable.
 
@@ -10,7 +10,7 @@ Design test: equivalent programs authored in supported lexical profiles resolve 
 
 ## Axiom II — Grammar is universal.
 
-All conforming profiles implement one formally specified grammatical system. Localized spellings and permitted lexical segmentation are not an invitation to create separate grammars. The grammar must be mechanically parseable and unambiguous; a valid program has exactly one syntactic interpretation under its declared specification/profile. Changes are explicit, versioned decisions.
+All conforming profiles implement one formally specified grammatical system. Localized spellings and permitted lexical segmentation are not an invitation to create separate grammars. The grammar must be mechanically parseable and unambiguous; a valid program has exactly one syntactic interpretation under its declared specification, compatible extension set and lexical profile. Modules may add capabilities through the universal extension contract without introducing locale-specific grammars or silently redefining the common kernel. Changes are explicit, versioned decisions.
 
 Design test: grammatically equivalent normalized token sequences parse identically; ambiguity is rejected or resolved by a specified rule, never an undocumented guess.
 
@@ -32,6 +32,14 @@ Lexical profile, speech/text presentation, and selected execution mechanism are 
 
 Design test: execute shared conformance cases across supported execution modes and compare specified results, effects and diagnostics.
 
+## Axiom VI — The Grammar is deliberately extensible.
+
+Any meaningful language, compiler, runtime, diagnostic or tooling capability that can be modular, configurable or programmatically extensible without breaking the language's foundational guarantees should be designed accordingly. Prefer reusable, documented extension interfaces, data-driven contracts and selectable features over unnecessary hard-coded behavior. Programs may declare required compiler modules and meaning-affecting configuration in source metadata; supported extensions may add grammatical constructions, types and behavior within an explicitly composed, validated contract.
+
+Extensibility does not authorize breaking the other axioms or silently changing the meaning of the kernel. The same declared standard, compatible modules and semantic settings must yield one grammatical interpretation and specified semantics, with equivalent written/spoken representations across supported lexical profiles and execution modes. Missing or conflicting dependencies must be diagnosed. Changing the selected feature set is an explicit change to a program's declared compilation environment, not an implicit consequence of an editor preference, machine or installed module. Keep language-defining invariants protected; justify necessary non-extensible boundaries.
+
+Design test: implement and load a meaningful capability through a documented extension interface without modifying the kernel; verify module/configuration resolution, deterministic composition, conflict rejection, lexical/speech equivalence, and execution parity in supported modes. See [extension requirements](EXTENSIBILITY.md).
+
 ## Governance
 
-Axioms constrain all accepted specifications and implementations. New features must demonstrate compatibility with all five. Only explicit owner approval may amend an axiom; record the rationale and consequences in a versioned design decision. Ambiguous or conflicting proposals remain provisional until resolved.
+Axioms constrain all accepted specifications and implementations. New features must demonstrate compatibility with all six. Only explicit owner approval may amend an axiom; record the rationale and consequences in a versioned design decision. Ambiguous or conflicting proposals remain provisional until resolved.

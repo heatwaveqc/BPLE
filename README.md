@@ -6,13 +6,14 @@
 
 The Grammar is an experimental general-purpose programming language inspired by Python's readability and Lojban's formally parseable linguistic structure. Its ambition is human-readable, speakable source code, interchangeable natural-language lexicons, deterministic parsing and semantics, interactive/runtime execution, and ahead-of-time compilation to native executables.
 
-## The five axioms
+## The six axioms
 
 1. Vocabulary is interchangeable.
 2. Grammar is universal.
 3. Meaning is deterministic.
 4. Speech and text are equivalent representations.
 5. Execution is independent of expression.
+6. The Grammar is deliberately extensible.
 
 Read the [constitution](spec/AXIOMS.md) for the implications of each axiom.
 
