@@ -1,0 +1,21 @@
+# Local settings, ephemeral builds and secrets
+.env
+.env.*
+!.env.example
+*.user
+*.suo
+.vs/
+.idea/
+bin/
+obj/
+build/
+dist/
+artifacts/
+TestResults/
+coverage/
+__pycache__/
+.pytest_cache/
+.venv/
+*.log
+.DS_Store
+Thumbs.db
