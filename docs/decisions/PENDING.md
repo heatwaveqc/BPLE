@@ -1,0 +1,24 @@
+# Pending design decisions
+
+The initial backlog comprises 40 review topics, grouped into eight batches of five. This is a prioritized discussion agenda, not 40 accepted design decisions or a promise of a fixed implementation sequence. Stable topic IDs in the issues are separate from sequential decision-record IDs. The source of truth for pending/disposed status is the issue checklists; do not copy or maintain duplicate status here.
+
+| Batch | Pending discussion / tracker | Topic IDs |
+|---|---|---|
+| 1 | [Lexical foundations](https://github.com/heatwaveqc/BPLE/issues/4) | L01–L05 |
+| 2 | [Structural grammar](https://github.com/heatwaveqc/BPLE/issues/5) | G01–G05 |
+| 3 | [Expressions and bindings](https://github.com/heatwaveqc/BPLE/issues/6) | E01–E05 |
+| 4 | [Types and data](https://github.com/heatwaveqc/BPLE/issues/7) | T01–T05 |
+| 5 | [Functions and control flow](https://github.com/heatwaveqc/BPLE/issues/8) | F01–F05 |
+| 6 | [Abstraction and reliability](https://github.com/heatwaveqc/BPLE/issues/9) | A01–A05 |
+| 7 | [Runtime and engineering](https://github.com/heatwaveqc/BPLE/issues/10) | R01–R05 |
+| 8 | [Ecosystem and release](https://github.com/heatwaveqc/BPLE/issues/11) | P01–P05 |
+
+## Workflow
+
+1. Start with the earliest unresolved batch (currently batch 1 at inception); read the actual issue and existing [decision register](README.md), relevant [research survey](../research/MAINSTREAM-GRAMMAR-SURVEY.md), and [constitution](../../spec/AXIOMS.md).
+2. Present up to five related questions with viable alternatives, examples, tradeoffs, a recommended option and axiom implications. Avoid treating sample spellings or implementation preferences as adopted grammar rules.
+3. Record the owner's actual approval, rejection, or explicit deferral; give each accepted decision an ADR number using [the template](TEMPLATE.md). Record dependencies and planned conformance cases; integrate accepted normative changes into the standard.
+4. Link the decision record(s) and PR on the issue before checking items off. Close the batch only after all five topics have a disposition; deferred items stay visible in linked follow-up issues. Do not close pending items merely because they have been discussed.
+5. If a dependency needs earlier review, bring it forward explicitly. In particular, a bounded host/IR feasibility experiment can run independently once approved; licensing must be resolved before distribution or third-party dataset redistribution. Overlapping decisions are allowed; cite the same ADR on all resolved topics rather than duplicating standards. Split overly broad topics into follow-ups without losing the five-at-a-time discussion cadence.
+
+Previously accepted decisions 0000–0002 remain in the register. The enclosure work in G04/G05 concerns their remaining syntax and implementation choices, not re-voting on already adopted requirements. No implementation or additional normative design approval follows from creating a backlog.

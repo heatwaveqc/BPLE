@@ -17,4 +17,4 @@ Stages are dependency guidance, not fixed dates. Prototype critical cross-profil
 
 ## Next work
 
-Agree on the smallest viable lexical and grammatical kernel: token classes, statement/phrase boundaries, literals and identifiers, language-profile structure, and reversible speech. Compare alternative designs before selecting specific words. Decide the first implementation host and target using a bounded prototype. See [decision register](decisions/README.md).
+Agree on the smallest viable lexical and grammatical kernel: token classes, statement/phrase boundaries, literals and identifiers, language-profile structure, and reversible speech. Compare alternative designs before selecting specific words. Decide the first implementation host and target using a bounded prototype. See [decision register](decisions/README.md) and the [pending design discussion backlog](decisions/PENDING.md), organized in batches of five.
