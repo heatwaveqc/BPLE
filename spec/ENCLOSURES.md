@@ -50,9 +50,9 @@ For a crossing named close:
 
 Provide an opt-in diagnostic presentation assigning anonymous enclosures personal names drawn from a versioned, ranked pool of the 1,000 most common names for the active lexical language profile. Use language-appropriate names, not an English list for every profile. A name such as Kevin-san or Susan-san is only an example, not a researched ranking. The compiler's canonical identities remain numeric or equivalent stable unique keys; humorous names are presentation aliases.
 
-The profile owns its name pool as data. Source and locale/region, population/time period, normalization, ranking tie-breaks and redistribution license must be documented; no fabricated popularity data. The definition of "most common" and exact selection strategy remain open. Name mode should remain reproducible for the same inputs and configuration.
+The profile owns its name pool as data. Source and locale/region, population/time period, normalization, ranking tie-breaks and redistribution license must be documented; no fabricated popularity data. The definition of "most common" remains open. Humorous allocation uses the source filename as its deterministic pseudorandom seed; for the same filename, source, versioned pool and configuration, names must reproduce across platforms. Use a specified portable hash/PRNG rather than implementation-dependent process hashing. The precise filename normalization (including whether a logical relative path disambiguates identical basenames), unnamed-input seed, generator and allocation algorithm remain open. Renaming a file may change display names but not its meaning.
 
-Use unambiguous labels: avoid reuse/collisions with explicit names and other generated aliases in the relevant diagnostic scope, or visibly disambiguate by ID. If there are more than 1,000 enclosures, a missing/incomplete pool, unsuitable names or exhausted collision-free candidates, fall back to explicit numeric labels (or a later specified unique numeric suffix). Never use the finite name list as a program-size or nesting constraint; the separate excessive-nesting policy below is independent of naming. Numeric identities/source spans remain available in all modes. Diagnostic rendering cannot depend on availability of external services.
+Allocate aliases from the pool for simultaneously active nested enclosures only; release aliases when their enclosures close so later non-overlapping enclosures may reuse names. No total-per-file consumption of the pool. Active generated aliases must be distinct; avoid collision with active explicit names or provide an unambiguous numeric disambiguator. If missing/incomplete pool data, unsuitable names or collisions exhaust available aliases at a supported depth, use numeric fallback. Historical diagnostics referencing reused names must retain their unique internal identity and source span. Never use the finite name list as a program-size or nesting constraint; the separate excessive-nesting policy below is independent of naming. Numeric identities/source spans remain available in all modes. Diagnostic rendering cannot depend on availability of external services.
 
 Example of the same anonymous-closure diagnostic in name mode:
 
@@ -64,12 +64,12 @@ Humorous naming is a diagnostic/display option, not a source requirement. A futu
 
 ## Excessive nesting: the Kevin Limit
 
-A dedicated compile-time diagnostic is required when genuine syntactic enclosure depth reaches 1,000 simultaneously open containers, regardless of enclosure kind, explicit or generated name, profile, or diagnostic naming mode. Count active nested enclosures, not total enclosures in a compilation unit, repeated sequential groups, or runtime function recursion. The threshold is a code-structure policy independent of the 1,000-name presentation pool. Default severity is an error at the opening of the 1,000th enclosure; an override for generated code or other exceptional use is not specified and remains a future design question. Detect excessive depth before exhausting the parser's own call stack or resource budget, and retain a meaningful source span and the current enclosure identity when possible.
+A dedicated compile-time diagnostic is required when genuine syntactic enclosure depth exceeds 1,000 simultaneously open containers, regardless of enclosure kind, explicit or generated name, profile, or diagnostic naming mode. Count active nested enclosures, not total enclosures in a compilation unit, repeated sequential groups, or runtime function recursion. The threshold is a code-structure policy independent of the 1,000-name presentation pool. Default severity is an error at the opening of the 1,001st enclosure; an override for generated code or other exceptional use is not specified and remains a future design question. Detect excessive depth before exhausting the parser's own call stack or resource budget, and retain a meaningful source span and the current enclosure identity when possible.
 
 Illustrative default humorous message (localized equivalents and exact diagnostic code pending):
 
-    Excessive nesting — depth 1,000.
-    You have nested 1,000 grammatical enclosures.
+    Excessive nesting — depth 1,001.
+    You have nested 1,001 grammatical enclosures. The maximum depth is 1,000.
     The compiler has run out of names. You appear to have run out of functions.
     Consider refactoring your code.
 
@@ -86,12 +86,14 @@ The joke is not the technical reason for rejection: it applies even in numeric m
 | Nested anonymous groups; missing inner/outer close | Distinguish recognized openings and relevant incomplete structure |
 | Unexpected closing delimiter without identifiable opener | Report unexpected token/location without invented identity |
 | Explicit/generated display label clash | Distinct diagnostic identities |
-| More than 1,000 sequential or shallow anonymous enclosures | Unique labels with numeric fallback; no total-count restriction from name pool |
-| 999 nested enclosures | No excessive-nesting diagnostic |
-| 1,000 genuinely nested enclosures, including mixed kinds/names | Dedicated excessive-nesting error at threshold; same behavior across naming modes and profiles |
+| More than 1,000 sequential or shallow anonymous enclosures | Release/reuse aliases after closure; no aggregate-count restriction; distinct internal IDs/source spans |
+| 999 and 1,000 nested enclosures | No excessive-nesting diagnostic |
+| 1,001 genuinely nested enclosures, including mixed kinds/names | Dedicated excessive-nesting error; same behavior across naming modes and profiles |
 | Runtime recursion or sequential enclosures beyond 1,000 | No syntactic-depth diagnostic merely from those counts |
 | Missing profile name data | Numeric fallback |
-| Same input/configuration repeated | Reproducible identity/label rendering |
+| Same filename, source, profile/pool and configuration repeated across platforms | Reproducible identity/alias rendering |
+| Different filenames | Filename seeds affect alias sequence; no guarantee against chance equal names; no semantic change |
+| Reused names in non-overlapping regions | Distinct internal IDs and source spans; no ambiguity in multi-location diagnostics |
 | Numeric vs humorous display, across profiles | No change to parsing or program semantics |
 | Written/spoken and localized delimiters | Same structural roles and name identity; reversible representation |
 
