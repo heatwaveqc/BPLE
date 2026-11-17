@@ -11,6 +11,8 @@ The owner explicitly requested a sixth axiom: make The Grammar deliberately exte
 
 Adopt [Axiom VI](../../spec/AXIOMS.md) and the accompanying [extension requirements](../../spec/EXTENSIBILITY.md). Favor a protected kernel, common extension contracts, selectable standard capabilities, third-party compiler modules, and explicit module/semantic-option requirements. Prefer the same extension surfaces for first-party and community features when practical. Preserve all previous axioms: universal grammar applies to a shared kernel and deterministic composition under a declared standard and extension set; lexical profiles do not become independent grammar implementations. Do not allow a plugin or installed setting to silently redefine existing programs.
 
+Owner clarification (2026-11-17): the standard installation must be a complete general-purpose environment comparable in breadth to a normal Python or C# installation. Extensibility is a feature, not a requirement for ordinary programming. See [decision 0010](0010-standard-installation.md).
+
 ## Alternatives and scope
 
 A monolithic compiler would simplify initial implementation but force forks for many feature requests. Library-only extensibility cannot cover syntax, type analysis or lowering. Unrestricted patching would make meaning and compatibility unpredictable. Select deliberate, documented extension interfaces and explicit composition/configuration, with necessary invariant boundaries. No exact API, plugin language, header syntax, dependency resolver, trust policy, operator/type design, host or backend is adopted by this amendment.
