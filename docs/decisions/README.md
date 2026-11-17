@@ -7,6 +7,11 @@ Record material design decisions in numbered Markdown files such as 0001-lexical
 | 0000 | [Project identity and constitutional axioms](0000-foundation.md) | Accepted |
 | 0001 | [Named grammatical enclosures and generated identifiers](0001-named-enclosures.md) | Accepted (design requirements) |
 | 0002 | [Dedicated excessive-nesting diagnostic](0002-excessive-nesting.md) | Accepted (diagnostic requirement) |
+| 0003 | [Canonical token roles and optional morphology](0003-token-roles.md) | Accepted |
+| 0004 | [Lexical profiles and explicit token boundaries](0004-lexical-profiles.md) | Accepted requirements; selection/storage pending |
+| 0005 | [Unicode, case-insensitive and quoted identifiers](0005-identifiers.md) | Accepted |
+| 0006 | [Symbolic and verbal literals](0006-literals.md) | Accepted |
+| 0007 | [Lossless spoken and written representation](0007-speech-text.md) | Accepted |
 
 ## Pending design decisions
 
@@ -14,6 +19,6 @@ Use the [discussion backlog](PENDING.md) to find the next batch of five. GitHub 
 
 ## Open questions (not decisions)
 
-Formal grammar notation and statement boundaries; token IDs and profile schema; segmentation across scripts, Unicode identifiers and escapes; spoken representation (including arbitrary literal/identifier spelling); type and effect systems; arithmetic and evaluation order; implementation host and backend strategy; standard library and localization; file extension and CLI names; compatibility/versioning; software license.
+Formal grammar notation and statement boundaries; exact token IDs and profile schema; delimiter configuration, IDE/source selection and storage policy (L02); Unicode normalization/folding, escapes, and exact spoken representation (including arbitrary literal/identifier spelling); type and effect systems; arithmetic and evaluation order; implementation host and backend strategy; standard library and localization; file extension and CLI names; compatibility/versioning; software license.
 
 Create a proposal when work begins on a question; do not assign decisions merely because an agent uses a provisional example.
